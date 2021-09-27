@@ -19,7 +19,7 @@ public class ClienteAplicativo {
 		
 		MediaHome obj = null;
 		try {
-			obj = (MediaHome) Naming.lookup("//172.31.94.227:9090/MediaHome");
+			obj = (MediaHome) Naming.lookup("//172.31.94.227:4010/MediaHome");
 			
 			obj.setN1(n1);
 			obj.setN2(n2);

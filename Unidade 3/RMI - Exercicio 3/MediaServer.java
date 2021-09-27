@@ -50,8 +50,8 @@ public class MediaServer extends UnicastRemoteObject implements MediaHome {
 
 		try {
 			MediaHome obj = new MediaServer();
-			Registry registry = LocateRegistry.createRegistry(9090);
-			Naming.rebind("//172.31.94.227:9090/MediaHome", obj);
+			Registry registry = LocateRegistry.createRegistry(4010);
+			Naming.rebind("//172.31.94.227:4010/MediaHome", obj);
 			System.out.println("MediaServer bound in registry");
 		} catch (Exception e) {
 			System.out.println("MediaServer err: " + e.getMessage());
