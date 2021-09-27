@@ -1,9 +1,5 @@
 package sd2;
 
-/*
- * MediaHome.java
- */
-
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 

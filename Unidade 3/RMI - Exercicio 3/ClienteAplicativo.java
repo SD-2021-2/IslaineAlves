@@ -1,6 +1,8 @@
 package sd2;
 
 import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.Scanner;
 
 public class ClienteAplicativo {
@@ -17,7 +19,8 @@ public class ClienteAplicativo {
 		
 		MediaHome obj = null;
 		try {
-			obj = (MediaHome) Naming.lookup("rmi://192.168.1.15:2021/MediaHome");
+			obj = (MediaHome) Naming.lookup("//172.31.94.227:9090/MediaHome");
+			
 			obj.setN1(n1);
 			obj.setN2(n2);
 			obj.setN3(n3);

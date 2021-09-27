@@ -1,11 +1,9 @@
 package sd2;
 
-/*
- * MediaServer.java
- */
-
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 public class MediaServer extends UnicastRemoteObject implements MediaHome {
@@ -52,8 +50,8 @@ public class MediaServer extends UnicastRemoteObject implements MediaHome {
 
 		try {
 			MediaHome obj = new MediaServer();
-			
-			Naming.rebind("rmi://192.168.1.15:2021/MediaHome", obj);
+			Registry registry = LocateRegistry.createRegistry(9090);
+			Naming.rebind("//172.31.94.227:9090/MediaHome", obj);
 			System.out.println("MediaServer bound in registry");
 		} catch (Exception e) {
 			System.out.println("MediaServer err: " + e.getMessage());
