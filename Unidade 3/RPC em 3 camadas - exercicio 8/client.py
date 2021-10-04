@@ -1,6 +1,6 @@
 import xmlrpc.client
 
-s = xmlrpc.client.ServerProxy("http://192.168.1.15:4000/")
+s = xmlrpc.client.ServerProxy("http://172.31.81.10:4000/")
 
 #le o nome do cliente
 print('Digite o nome do cliente: ')

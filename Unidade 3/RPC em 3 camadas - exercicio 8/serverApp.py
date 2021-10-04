@@ -4,7 +4,7 @@ import xmlrpc.client
 #funcao pra calcular o percentual de credito
 def calculaCredito(nome):
     #envia nome ao servidor de banco de dados e recebe o saldo medio
-    s = xmlrpc.client.ServerProxy("http://192.168.1.15:4010/")
+    s = xmlrpc.client.ServerProxy("http://172.31.94.227:4000/")
     saldomedio = float(s.procuraNome(nome))
 
     percentualcredito = 0
@@ -20,7 +20,7 @@ def calculaCredito(nome):
     return ('Percentual de Credito:', percentualcredito)
 
 #registra a funcao calcula credito
-server = SimpleXMLRPCServer(("192.168.1.15", 4000))
+server = SimpleXMLRPCServer(("172.31.81.10", 4000))
 server.register_function(calculaCredito, 'calculaCredito')
 
 if __name__ == '__main__':

@@ -17,7 +17,7 @@ def procuraNome(nome):
     return saldo
 
 #registra a funcao procura nome
-server = SimpleXMLRPCServer(("192.168.1.15", 4010))
+server = SimpleXMLRPCServer(("172.31.94.227", 4000))
 server.register_function(procuraNome, 'procuraNome')
 
 if __name__ == '__main__':
